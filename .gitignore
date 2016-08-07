@@ -29,7 +29,7 @@
 
 # Ignore Idea config files
 /.idea
-=======
+
 *.rbc
 capybara-*.html
 .rspec
@@ -72,4 +72,3 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
->>>>>>> 0afad9377cba190ac98b1902adf3b56c1fe1d061
