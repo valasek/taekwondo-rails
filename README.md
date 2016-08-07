@@ -1,4 +1,4 @@
-# Taekwondo 
+# Taekwondo [![Build Status](https://travis-ci.org/valasek/taekwondo.svg?branch=master)](https://travis-ci.org/valasek/taekwondo) [![Code Climate](https://codeclimate.com/github/valasek/taekwondo/badges/gpa.svg)](https://codeclimate.com/github/valasek/taekwondo) [![Test Coverage](https://codeclimate.com/github/valasek/taekwondo/badges/coverage.svg)](https://codeclimate.com/github/valasek/taekwondo/coverage)
 
 Manage Taekwondo teams, competitors and competitions. Web based portal allows you to register competitor to particular competition..
 

@@ -1,0 +1,14 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.2.5
+  - 2.3.1
+  - ruby-head
+branches:
+    only:
+        - master
+before_script: "bundle exec rails db:drop db:create db:migrate"
+script: "rails test"
+
+notifications:
+  email: false
