@@ -1,12 +1,16 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.3.1
+- 2.3.1
 branches:
-    only:
-        - master
-before_script: "bundle exec rails db:drop db:create db:migrate"
-script: "bundle exec rails test"
-
+  only:
+  - master
+before_script: bundle exec rails db:drop db:create db:migrate
+script: bundle exec rails test
+deploy:
+  provider: heroku
+  app: itf
+  api_key:
+    secure: KFvHfkVf/jDLNv1bF0Gjb+hXMQa++HHnDhv4mjJMIzp46W1+G+QOBHsQP6PjVFJSMx9FKQMHErSj4/6PdvinXONCHWctfyIn91sNWwrojgDWNHIKg54ol1mwr7Jpb1C1GMXZz6e39NlxAIIRI2I2Pgqz7qRDFaaB897idX5cnKbIoA84L+LHQ7N3UdrFBLNUXmgPCdm1b+9AJ3cRPmpNZ8Jk2ubByiKkFB97BWN7mdLbvAFBe0dlBQiGM/0mZ1OxGdfVPYYd3k9lrqVr6m+4dxKYBAmLD40cJr8jX3TaKgA3qy79UTNIPA7MmPiv23JA8pp7nRohS0so3E9myYMaain48+IQdM/QEOnN4KfJLJTmFUCACtVvueztHrq+jU/mWggQ3ulNr/BvtO22HxEotqiya0JWq1HdSd94fiAQOUyYe7pAIwoP1yBYwnp7HjXVB4GGE+w4gJwCnzNlDHk6t71bFMRrYBoX1Kwl/D1GQP5chzSQkI9nMKd7vF6o/SHYYdY+0ftAV1vU6sUr7b6Sy9mJf5eTAWdxavR2XydUiyISM+CSmJELbwM9C+1mHWx8NIFwDa7c348Aud9SG8e1tY+EXXj1tuyS+kEDd7p64M0xi8bM4yL1jgf5/JyhpG74qCcmLPQhWGEfH4uIjMN/TukmID2xc1XKscCkWZPLiA8=
 notifications:
   email: false
