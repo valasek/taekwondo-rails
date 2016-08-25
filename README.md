@@ -2,6 +2,9 @@
 
 Manage Taekwondo teams, competitors and competitions. Web based portal allows you to register competitor to particular competition.
 
+## Demo
+Check the lastest version at [itf.herokuapp.com](http://itf.herokuapp.com).
+
 ## License
 
 All source code in the [Taekwondo](https://github.com/valasek/taekwondo) is available under the GNU GPL v3 License. See [LICENSE.md](LICENSE.md) for details.
