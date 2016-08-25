@@ -1,8 +1,13 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
+<tr>
+  <td>
+    <%= gravatar_for user, size: 50 %>
+  </td>
+  <td>
+    <%= link_to user.name, user %>
+  </td>
+  <td>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+      <%= link_to "", user, method: :delete, data: { confirm: "You sure?" }, class: "glyphicon glyphicon-trash" %>
   <% end %>
-</li>
+  </td>
+</tr>

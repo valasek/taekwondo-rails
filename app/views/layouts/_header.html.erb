@@ -1,11 +1,17 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Taekwondo Competition Portal", root_path, id: "logo" %>
+<div class="container">
+  <div class="header">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to "Taekwondo Competition Portal", root_path, class: "navbar-brand" %>
+      </div>
+    </div>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav nav-pills pull-right">
         <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
+          <li><%= link_to "Competitions", competitions_path %></li>
+          <li><%= link_to "Members", members_path %></li>
+          <li><%= link_to "Administration", "" %></li>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -26,4 +32,4 @@
       </ul>
     </nav>
   </div>
-</header>
+</div>

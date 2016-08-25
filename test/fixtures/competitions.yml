@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  date: 2016-08-25
+  deadline: 2016-08-25
+  fee: 9.99
+  instructions_url: MyString
+  langlong: MyString
+
+two:
+  name: MyString
+  location: MyString
+  date: 2016-08-25
+  deadline: 2016-08-25
+  fee: 9.99
+  instructions_url: MyString
+  langlong: MyString
