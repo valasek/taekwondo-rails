@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :teams
   resources :competitions
   resources :members
   root   'static_pages#home'
