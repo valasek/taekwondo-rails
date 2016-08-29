@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TeamsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @team = teams(:one)
+    @team = teams(:team_one)
   end
 
   test "should get index" do

@@ -3,11 +3,13 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
+    @team = Team.new(id: 1, name: "Strancice")
     @user = User.new(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
   end
   
   test "should be valid" do
+    @user.team = @team
     assert @user.valid?
   end
 
@@ -35,6 +37,7 @@ class UserTest < ActiveSupport::TestCase
                          first.last@foo.jp alice+bob@baz.cn]
     valid_addresses.each do |valid_address|
       @user.email = valid_address
+      @user.team = @team
       assert @user.valid?, "#{valid_address.inspect} should be valid"
     end
   end

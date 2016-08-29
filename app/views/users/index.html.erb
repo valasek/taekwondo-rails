@@ -1,9 +1,16 @@
 <% provide(:title, 'Registered users') %>
-<h1>Registered users</h1>
+<h1>Registered users <small>(<%= @users.count%>)</small></h1>
 
 <%= will_paginate %>
 
-<table style="width: auto;" class="table">
+<table class="table">
+  <thead>
+  <tr>
+    <th></th>
+    <th>User</th>
+    <th>Tým</th>
+    <th></th>
+  </tr>
   <%= render @users %>
 </table>
 

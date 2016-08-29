@@ -5,9 +5,11 @@ one:
   first_name: MyString
   last_name: MyString
   birthdate: 2016-08-25
+  team_id: 1
 
 two:
   itf_id: 1
   first_name: MyString
   last_name: MyString
   birthdate: 2016-08-25
+  team_id: 2

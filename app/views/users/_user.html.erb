@@ -6,6 +6,9 @@
     <%= link_to user.name, user %>
   </td>
   <td>
+    <%= user.team.name %>
+  </td>
+  <td>
   <% if current_user.admin? && !current_user?(user) %>
       <%= link_to "", user, method: :delete, data: { confirm: "You sure?" }, class: "glyphicon glyphicon-trash" %>
   <% end %>
