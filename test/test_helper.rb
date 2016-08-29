@@ -16,6 +16,7 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+
 end
 
 class ActionDispatch::IntegrationTest
@@ -26,4 +27,9 @@ class ActionDispatch::IntegrationTest
                                           password: password,
                                           remember_me: remember_me } }
   end
+
+  def setup
+    self.default_url_options = { locale: "en" }
+  end
+
 end

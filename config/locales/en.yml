@@ -20,4 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+# home page and main menu
+  portal_name: "Taekwondo Competition Portal"
+  home: "Home"
+  competitions: "Competitions"
+  teams: "Teams"
+  members: "Members"
+  administration: "Administration"
+  users: "Users"
+  account: "Account"
+  profile: "Profile"
+  settings: "Settings"
+  logout: "Log out"
+  login: "Log in"
+  about: "About"
+  help: "Help"
+  contact: "Contact"
+  intro_message: "Manage your team and add members to selected competitions."
+  signup: "Sign up now!"

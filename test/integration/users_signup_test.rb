@@ -4,6 +4,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
   def setup
     ActionMailer::Base.deliveries.clear
+    self.default_url_options = { locale: "en" }
   end
 
   test "invalid signup information" do

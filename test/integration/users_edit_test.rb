@@ -5,6 +5,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:michael)
+    self.default_url_options = { locale: "en" }
   end
 
   test "unsuccessful edit" do

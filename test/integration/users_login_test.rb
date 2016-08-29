@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersLoginTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    self.default_url_options = { locale: "en" }
   end
   
   test "login with invalid information" do
