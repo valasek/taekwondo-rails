@@ -6,7 +6,6 @@ cs:
   members: "Členové"
   administration: "Administrace"
   users: "Použivatelé"
-  account: "Účet"
   profile: "Profil"
   settings: "Nastavení"
   logout: "Odhlásit"

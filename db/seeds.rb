@@ -1,3 +1,21 @@
+# Seed Sex
+sex_female = [{ :en => 'Female', :cs => 'Žena' }]
+sex_female.each_index do |i|
+  I18n.locale = 'en'
+  cat = Sex.new :sex => sex_female[i][:en]
+  I18n.locale = 'cs'
+  cat.sex= sex_female[i][:cs]
+  cat.save
+end
+sex_male = [{ :en => 'Male', :cs => 'Muž' }]
+sex_male.each_index do |i|
+  I18n.locale = 'en'
+  cat = Sex.new :sex => sex_male[i][:en]
+  I18n.locale = 'cs'
+  cat.sex= sex_male[i][:cs]
+  cat.save
+end
+
 # Seed Teams
 Team.create!(name: "Sparring")
 Team.create!(name: "Stránčice")
@@ -20,7 +38,6 @@ User.create!(name:  "User",
              activated: true,
              activated_at: Time.zone.now,
              team_id: 1)
-
 
 5.times do |n|
   name  = Faker::Name.name
@@ -49,23 +66,26 @@ Member.create!(itf_id: "51031",
                first_name: "Jiří",
                last_name: "Beneš",
                birthdate: "20.5.2002",
-               team_id: 1)
+               team_id: 1,
+               sex_id: 2)
 
 Member.create!(itf_id: "50719",
                first_name: "Lucie",
                last_name: "Bohatá",
                birthdate: "15.1.2001",
-               team_id: 1)
+               team_id: 1,
+               sex_id: 1)
 
 Member.create!(itf_id: "510313",
                first_name: "Mikuláš",
                last_name: "Hupcej",
                birthdate: "8.8.1998",
-               team_id: 2)
-
+               team_id: 2,
+               sex_id:2)
 
 Member.create!(itf_id: "509634",
                first_name: "Eliška",
                last_name: "Hupcejová",
                birthdate: "5.8.2001",
-               team_id: 1)
+               team_id: 1,
+               sex_id: 1)

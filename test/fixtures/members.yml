@@ -5,11 +5,13 @@ one:
   first_name: MyString
   last_name: MyString
   birthdate: 2016-08-25
-  team_id: 1
+  team: TeamOne
+  sex: Male
 
 two:
   itf_id: 1
   first_name: MyString
   last_name: MyString
   birthdate: 2016-08-25
-  team_id: 2
+  team: TeamTwo
+  sex: Female
