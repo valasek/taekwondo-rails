@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all
+    @members = Member.group(:team_id).count(:team_id)
   end
 
   # GET /teams/1
