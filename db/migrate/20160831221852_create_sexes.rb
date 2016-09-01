@@ -8,11 +8,11 @@ class CreateSexes < ActiveRecord::Migration[5.0]
 
     reversible do |dir|
       dir.up do
-        Sexes.create_translation_table! sex: :string
+        Sex.create_translation_table! sex: :string
       end
 
       dir.down do
-        Sexes.drop_translation_table!
+        Sex.drop_translation_table!
       end
     end
   end
