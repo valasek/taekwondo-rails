@@ -6,7 +6,7 @@ one:
   last_name: MyString
   birthdate: 2016-08-25
   team: TeamOne
-  sex: Male
+  # sex: Male
 
 two:
   itf_id: 1
@@ -14,4 +14,4 @@ two:
   last_name: MyString
   birthdate: 2016-08-25
   team: TeamTwo
-  sex: Female
+  # sex: Female
