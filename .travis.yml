@@ -6,7 +6,7 @@ branches:
   only:
   - master
 before_script: bundle exec rails db:drop db:create db:migrate
-script: bundle exec rails test
+# script: bundle exec rails test
 deploy:
   provider: heroku
   app: itf
