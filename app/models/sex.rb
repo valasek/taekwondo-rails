@@ -1,5 +1,5 @@
 class Sex < ApplicationRecord
-  translates :sex
+  translates :name
   has_many :members
 
   # separate different localizations of the record

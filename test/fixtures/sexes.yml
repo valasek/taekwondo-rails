@@ -2,8 +2,8 @@
 
 one:
   id: 1
-  sex: Male
+  name: Male
 
 two:
   id: 2
-  sex: Female
+  name: Female

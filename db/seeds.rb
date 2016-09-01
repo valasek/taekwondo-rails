@@ -2,17 +2,17 @@
 sex_female = [{ :en => 'Female', :cs => 'Žena' }]
 sex_female.each_index do |i|
   I18n.locale = 'en'
-  cat = Sex.new :sex => sex_female[i][:en]
+  cat = Sex.new :name => sex_female[i][:en]
   I18n.locale = 'cs'
-  cat.sex= sex_female[i][:cs]
+  cat.name = sex_female[i][:cs]
   cat.save
 end
 sex_male = [{ :en => 'Male', :cs => 'Muž' }]
 sex_male.each_index do |i|
   I18n.locale = 'en'
-  cat = Sex.new :sex => sex_male[i][:en]
+  cat = Sex.new :name => sex_male[i][:en]
   I18n.locale = 'cs'
-  cat.sex= sex_male[i][:cs]
+  cat.name = sex_male[i][:cs]
   cat.save
 end
 

@@ -42,13 +42,13 @@ ActiveRecord::Schema.define(version: 20160831222426) do
     t.string   "locale",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "sex"
+    t.string   "name"
     t.index ["locale"], name: "index_sex_translations_on_locale"
     t.index ["sex_id"], name: "index_sex_translations_on_sex_id"
   end
 
   create_table "sexes", force: :cascade do |t|
-    t.string   "sex"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

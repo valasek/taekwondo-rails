@@ -1,7 +1,7 @@
 class CreateSexes < ActiveRecord::Migration[5.0]
   def change
     create_table :sexes do |t|
-      t.string :sex
+      t.string :name
 
       t.timestamps
     end
@@ -10,8 +10,8 @@ class CreateSexes < ActiveRecord::Migration[5.0]
 
     reversible do |dir|
       dir.up do
-        Sex.translated_attribute_names = [:sex]
-        Sex.create_translation_table! sex: :string
+        Sex.translated_attribute_names = [:name]
+        Sex.create_translation_table! :name => :string
       end
 
       dir.down do
