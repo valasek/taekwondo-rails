@@ -8,6 +8,7 @@ class CreateSexes < ActiveRecord::Migration[5.0]
 
     reversible do |dir|
       dir.up do
+        Sex.translated_attribute_names = [:sex]
         Sex.create_translation_table! sex: :string
       end
 
