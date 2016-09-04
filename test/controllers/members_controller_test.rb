@@ -2,7 +2,11 @@ require 'test_helper'
 
 class MembersControllerTest < ActionDispatch::IntegrationTest
   setup do
+    # @sex = sexes(:sex_one)
+    # @level = levels(:level_one)
     @member = members(:one)
+    # @member.sex = @sex
+    # @member.level = @level
   end
 
   # stopped working after sex table was added

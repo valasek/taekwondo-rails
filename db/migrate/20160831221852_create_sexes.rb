@@ -6,7 +6,7 @@ class CreateSexes < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_reference :members, :sexes, foreign_key: true
+    add_reference :members, :sex, foreign_key: true
 
     reversible do |dir|
       dir.up do
