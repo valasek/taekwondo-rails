@@ -239,3 +239,15 @@ Member.create!(itf_id: "509634",
                team_id: 1,
                sex_id: 1,
                level_id: 16)
+
+# Seed Members_Competitions
+CompetitionsMember.create!(member_id: 1,
+                           competition_id: 1,
+                           trainee: false,
+                           coach: false)
+
+# Seed Members_Competitions
+CompetitionsMember.create!(member_id: 3,
+                           competition_id: 1,
+                           trainee: true,
+                           coach: true)

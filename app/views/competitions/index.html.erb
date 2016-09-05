@@ -26,6 +26,7 @@
         <td><%= competition.fee %></td>
         <td><a href="<%= competition.instructions_url %>">Instructions</a></td>
         <td><%= competition.langlong %></td>
+        <td><%= link_to 'Enroll', controller: :members, action: :index, competition_id: competition.id %></td>
         <td><%= link_to 'Show', competition %></td>
         <td><%= link_to 'Edit', edit_competition_path(competition) %></td>
         <td><%= link_to 'Destroy', competition, method: :delete, data: { confirm: 'Are you sure?' } %></td>

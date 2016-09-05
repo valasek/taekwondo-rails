@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904190548) do
+ActiveRecord::Schema.define(version: 20160905215839) do
 
   create_table "competitions", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20160904190548) do
     t.string   "langlong"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "competitions_members", force: :cascade do |t|
+    t.integer  "member_id"
+    t.integer  "competition_id"
+    t.boolean  "trainee"
+    t.boolean  "coach"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "level_translations", force: :cascade do |t|

@@ -5,6 +5,9 @@ class MembersController < ApplicationController
   # GET /members.json
   def index
     @members = Member.all
+    if params[:competition_id]
+      @competition_id = params[:competition_id]
+    end
   end
 
   # GET /members/1
@@ -72,4 +75,5 @@ class MembersController < ApplicationController
     def member_params
       params.require(:member).permit(:itf_id, :first_name, :last_name, :birthdate)
     end
+
 end
