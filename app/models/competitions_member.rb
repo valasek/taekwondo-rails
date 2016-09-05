@@ -1,0 +1,2 @@
+class CompetitionsMember < ApplicationRecord
+end
