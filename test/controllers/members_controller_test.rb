@@ -20,13 +20,13 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-#  test "should create member" do
-#    assert_difference('Member.count') do
-#      post members_url, params: { member: { birthdate: @member.birthdate, first_name: @member.first_name, itf_id: @member.itf_id, last_name: @member.last_name } }
-#    end
-#
-#    assert_redirected_to member_url(Member.last)
-#  end
+  test "should create member" do
+    assert_difference('Member.count') do
+      post members_url, params: { member: { birthdate: @member.birthdate, first_name: @member.first_name, itf_id: @member.itf_id, last_name: @member.last_name } }
+    end
+
+    assert_redirected_to member_url(Member.last)
+  end
 
   test "should show member" do
     get member_url(@member)
@@ -38,10 +38,10 @@ class MembersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-#  test "should update member" do
-#    patch member_url(@member), params: { member: { birthdate: @member.birthdate, first_name: @member.first_name, itf_id: @member.itf_id, last_name: @member.last_name } }
-#    assert_redirected_to member_url(@member)
-#  end
+  test "should update member" do
+    patch member_url(@member), params: { member: { birthdate: @member.birthdate, first_name: @member.first_name, itf_id: @member.itf_id, last_name: @member.last_name } }
+    assert_redirected_to member_url(@member)
+  end
 
   test "should destroy member" do
     assert_difference('Member.count', -1) do
