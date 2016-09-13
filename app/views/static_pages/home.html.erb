@@ -1,13 +1,13 @@
 <div class="cemter jumbotron">
   <h2><%= t('intro_message') %></h2>
-  <%= link_to t('signup'), signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to t('signup_now'), signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 <div>
   <table class="table">
     <thead>
     <tr>
-      <th>Registered teams</th>
-      <th>Registered members</th>
+      <th><%= t('registered_teams') %></th>
+      <th><%= t('registered_members') %></th>
       <th colspan="3"></th>
     </tr>
     </thead>
@@ -20,5 +20,6 @@
     <% end %>
     </tbody>
   </table>
-  <div><b>Registered portal users:</b> <%= @users %></div>
+  <div><b> <%= t('registered_users') %>:</b> <%= @users %></div>
 </div>
+

@@ -35,4 +35,22 @@ en:
   help: "Help"
   contact: "Contact"
   intro_message: "Manage your team and add members to selected competitions."
-  signup: "Sign up now!"
+  signup_now: "Sign up now!"
+  registered_teams: "Registered teams"
+  registered_members: "Registered members"
+  registered_users: "Registered portal users"
+# login
+  password: "Password"
+  forgot_password: "forgot password"
+  remember_me: "Remember me on this computer"
+  new_user: "New user"
+# signup
+  signup: "Sign up"
+  team_name: "Team name"
+  name: "Name"
+  password_confirmation: "Password confirmation"
+  create_account: "Create my account"
+# Forgot password
+  submit: "Submit"
+  reset_password: "Reset password"
+  update_password: "Update password"

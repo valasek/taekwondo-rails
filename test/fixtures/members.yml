@@ -7,6 +7,7 @@ one:
   birthdate: 2016-08-25
   team: TeamOne
   sex_id: 2
+  level_id: 1
 
 two:
   itf_id: 1
@@ -15,3 +16,4 @@ two:
   birthdate: 2016-08-25
   team: TeamTwo
   sex_id: 1
+  level_id: 1

@@ -1,4 +1,5 @@
 cs:
+# home page and main menu
   portal_name: "Taekwondo Soutěžný Portál"
   home: "Domů"
   competitions: "Soutěže"
@@ -13,4 +14,22 @@ cs:
   help: "Nápověda"
   contact: "Kontakt"
   intro_message: "Spravujte svůj tým a přihlašujte členy na vybrané soutěže."
-  signup: "Registrovat se!"
+  signup_now: "Registrovat se!"
+  registered_teams: "Registovaných týmů"
+  registered_members: "Registovaných členů"
+  registered_users: "Registovaných používatelů"
+# login
+  password: "Heslo"
+  forgot_password: "zapomenuté heslo"
+  remember_me: "Ulož si mně na tomhle počítači"
+  new_user: "Nový používatel"
+# signup
+  signup: "Registrace"
+  team_name: "Jméno týmu"
+  name: "Jméno"
+  password_confirmation: "Potvrzení hesla"
+  create_account: "Vytvořit účet"
+# Forgot password
+  submit: "Poslat"
+  reset_password: "Reset hesla"
+  update_password: "Aktualizuj heslo"
