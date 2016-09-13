@@ -3,9 +3,11 @@ require 'test_helper'
 class CompetitionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @competition = competitions(:one)
+    @user = users(:michael)
   end
 
   test "should get index" do
+    log_in_as( @user, remember_me: '0' )
     get competitions_url
     assert_response :success
   end

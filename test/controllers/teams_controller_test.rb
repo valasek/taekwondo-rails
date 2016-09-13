@@ -3,9 +3,11 @@ require 'test_helper'
 class TeamsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @team = teams(:team_one)
+    @user = users(:michael)
   end
 
   test "should get index" do
+    log_in_as(@user, remember_me: '1')
     get teams_url
     assert_response :success
   end

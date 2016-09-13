@@ -16,14 +16,16 @@
       <tr>
         <td><%= team.name %></td>
         <td><%= @members[team.id] %></td>
-        <td><%= link_to 'Show', team %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.admin %>
+          <td><%= link_to 'Show', team %></td>
+          <td><%= link_to 'Edit', edit_team_path(team) %></td>
+          <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Team', new_team_path %>
+<% if current_user.admin %>
+    <br>
+  <%= link_to 'New Team', new_team_path, class: 'btn btn-primary' %>
+<% end %>

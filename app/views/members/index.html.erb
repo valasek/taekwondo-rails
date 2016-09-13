@@ -3,12 +3,6 @@
 <h1><%= t('members') %> <small>(<%= @members.count %>)</small></h1>
 
 <%= form_for :member, { :url => "add_to_competition", :method => 'put' } do |f| %>
-    <% if @competition_id %>
-      <%= hidden_field_tag :competition_id, @competition_id %>
-      <div>
-        <%= submit_tag "Save" %>
-      </div>
-    <% end %>
     <table class="table">
       <thead>
       <tr>
@@ -49,13 +43,13 @@
         <% end %>
       </tbody>
     </table>
-<% end %>
-
-<br>
-
-<% if @competition_id %>
-    <!-- <%= link_to 'Enroll to competition', "javascript:addToCompetition()", class: "btn btn-primary" %> -->
-    <%= link_to 'Enroll to competition', "/add_to_competition", class: "btn btn-primary" %>
-<% else %>
-  <%= link_to 'New Member', new_member_path %>
+    <% if @competition_id %>
+        <br>
+        <%= hidden_field_tag :competition_id, @competition_id %>
+        <div>
+          <%= submit_tag 'Enroll to competition', class: 'btn btn-primary' %>
+        </div>
+    <% else %>
+        <%= link_to 'New Member', new_member_path, class: 'btn btn-primary' %>
+    <% end %>
 <% end %>
