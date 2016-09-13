@@ -2,50 +2,60 @@
 
 <h1><%= t('members') %> <small>(<%= @members.count %>)</small></h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>ITF ID</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Birthdate</th>
-      <th>Sex</th>
-      <th>Level</th>
-      <% if @competition_id %>
-          <th>Enroll</th>
-      <% end %>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @members.each do |member| %>
-      <tr>
-        <td><%= member.itf_id %></td>
-        <td><%= member.first_name %></td>
-        <td><%= member.last_name %></td>
-        <td><%= member.birthdate %></td>
-        <td><%= member.sex.name %></td>
-        <td><%= member.level.name %></td>
-        <% if @competition_id %>
-            <% if CompetitionsMember.where(member_id: member.id, competition_id: @competition_id).empty? %>
-              <td><input type="checkbox"/></td>
-            <% else %>
-              <td><input type="checkbox" checked/></td>
-            <% end %>
-        <% end %>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<%= form_for :member, { :url => "add_to_competition", :method => 'put' } do |f| %>
+    <% if @competition_id %>
+      <%= hidden_field_tag :competition_id, @competition_id %>
+      <div>
+        <%= submit_tag "Save" %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ITF ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Birthdate</th>
+        <th>Sex</th>
+        <th>Level</th>
+        <% if @competition_id %>
+            <th>Enroll</th>
+        <% end %>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @members.each do |member| %>
+            <tr>
+              <td><%= member.itf_id %></td>
+              <td><%= member.first_name %></td>
+              <td><%= member.last_name %></td>
+              <td><%= member.birthdate %></td>
+              <td><%= member.sex.name %></td>
+              <td><%= member.level.name %></td>
+              <% if @competition_id %>
+                  <% if CompetitionsMember.where(member_id: member.id, competition_id: @competition_id).empty? %>
+                      <!-- <td><input type="checkbox"/></td> -->
+                      <td><%= check_box_tag "member_ids[]", member.id  -%></td>
+                  <% else %>
+                      <!-- <td><input type="checkbox" checked/></td> -->
+                      <td><%= check_box_tag "member_ids[]", member.id, {:checked => "checked"}  -%></td>
+                  <% end %>
+              <% end %>
+              <td><%= link_to 'Show', member %></td>
+              <td><%= link_to 'Edit', edit_member_path(member) %></td>
+              <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
 
 <br>
 
 <% if @competition_id %>
-    <%= link_to 'Enroll to selected competition', new_member_path %>
+    <!-- <%= link_to 'Enroll to competition', "javascript:addToCompetition()", class: "btn btn-primary" %> -->
+    <%= link_to 'Enroll to competition', "/add_to_competition", class: "btn btn-primary" %>
 <% else %>
   <%= link_to 'New Member', new_member_path %>
 <% end %>

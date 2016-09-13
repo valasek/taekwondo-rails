@@ -1,10 +1,41 @@
 class MembersController < ApplicationController
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
+  def add_to_competition
+    logger.debug "************"
+    logger.debug "Selected members: #{params[:member_ids].count}"
+    logger.debug "Selected member IDs: #{params[:member_ids]}"
+    logger.debug "competition_id: #{params[:competition_id]}"
+    logger.debug "************"
+    ActiveRecord::Base.transaction do
+      assigned_members = Member.where( team_id: current_user.team_id)
+      # lets delete old assignments of members to particular competition
+      assigned_members.each do |f|
+        begin
+          assigned_competition = f.competitions.find(params[:competition_id])
+          f.competitions.delete(assigned_competition)
+        rescue ActiveRecord::RecordNotFound
+          logger.debug "Nothing to delete"
+        end
+      end
+      # and add selected ones only
+      selected_competition = Competition.find( params[:competition_id] )
+      params[:member_ids].each do |f|
+        selected_member = Member.find(f)
+        selected_member.competitions << selected_competition
+      end
+    end
+    #redirect to form setting member competition levels
+  end
+
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all
+    if current_user.admin
+      @members = Member.all
+    else
+      @members = Member.all.where( team_id: @current_user.team_id )
+    end
     if params[:competition_id]
       @competition_id = params[:competition_id]
     end
