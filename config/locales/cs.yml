@@ -33,3 +33,24 @@ cs:
   submit: "Poslat"
   reset_password: "Reset hesla"
   update_password: "Aktualizuj heslo"
+# Competitions
+  location: "Místo"
+  date_text: "Datum"
+  deadline: "Termín přihlášky"
+  fee: "Poplatek"
+  instructions_url: "Instrukce"
+  instructions: "Instrukce"
+  langlong: "GPS"
+  enroll: "Nahlásit členy"
+  show: "Zobrazit"
+  edit: "Upravit"
+  destroy: "Vymazat"
+  are_you_sure: "Jste si jistý?"
+  new_competition: "Nová soutěž"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+  back: "Zpět"
+  editing_competition: "Úprava soutěže"

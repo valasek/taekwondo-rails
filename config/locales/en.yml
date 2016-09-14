@@ -54,3 +54,24 @@ en:
   submit: "Submit"
   reset_password: "Reset password"
   update_password: "Update password"
+# Competitions
+  location: "Location"
+  date_text: "Date"
+  deadline: "Deadline"
+  fee: "Fee"
+  instructions_url: "Instructions url"
+  instructions: "Instructions"
+  langlong: "GPS"
+  enroll: "Enroll members"
+  show: "Show"
+  edit: "Edit"
+  destroy: "Delete"
+  are_you_sure: "Are you sure?"
+  new_competition: "New Competition"
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+  back: "Back"
+  editing_competition: "Editing Competition"

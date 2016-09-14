@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name')%>:</strong>
   <%= @competition.name %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong><%= t('location')%>:</strong>
   <%= @competition.location %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong><%= t('date_text')%>:</strong>
   <%= @competition.date %>
 </p>
 
 <p>
-  <strong>Deadline:</strong>
+  <strong><%= t('deadline')%>:</strong>
   <%= @competition.deadline %>
 </p>
 
 <p>
-  <strong>Fee:</strong>
+  <strong><%= t('fee')%>:</strong>
   <%= @competition.fee %>
 </p>
 
 <p>
-  <strong>Instructions url:</strong>
+  <strong><%= t('instructions_url')%>:</strong>
   <%= @competition.instructions_url %>
 </p>
 
 <p>
-  <strong>Langlong:</strong>
+  <strong><%= t('langlong')%>:</strong>
   <%= @competition.langlong %>
 </p>
 
-<%= link_to 'Edit', edit_competition_path(@competition) %> |
-<%= link_to 'Back', competitions_path %>
+<%= link_to t('edit'), edit_competition_path(@competition) %> |
+<%= link_to t('back'), competitions_path %>
