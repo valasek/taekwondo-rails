@@ -1,4 +1,4 @@
-<% provide(:title, 'Registered users') %>
+<% provide(:title, t('registered_users')) %>
 <h1> <%= t('users') %> <small>(<%= @users.count%>)</small></h1>
 
 <%= will_paginate %>
@@ -7,8 +7,8 @@
   <thead>
   <tr>
     <th></th>
-    <th>User</th>
-    <th>Tým</th>
+    <th><%= t('user') %></th>
+    <th><%= t('team')%></th>
     <th></th>
   </tr>
   <%= render @users %>

@@ -10,7 +10,7 @@
   </td>
   <td>
   <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "", user, method: :delete, data: { confirm: "You sure?" }, class: "glyphicon glyphicon-trash" %>
+      <%= link_to "", user, method: :delete, data: { confirm: t('are_you_sure') }, class: "glyphicon glyphicon-trash" %>
   <% end %>
   </td>
 </tr>
