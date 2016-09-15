@@ -54,3 +54,8 @@ cs:
       - :year
   back: "Zpět"
   editing_competition: "Úprava soutěže"
+# Teams
+  no_of_members: "Počet členů"
+  new_team: "Nový tým"
+  editing_team: "Editace týmu"
+  new_team: "Nový tým"

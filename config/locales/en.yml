@@ -75,3 +75,8 @@ en:
       - :year
   back: "Back"
   editing_competition: "Editing Competition"
+# Teams
+  no_of_members: "Number of members"
+  new_team: "New Team"
+  editing_team: "Editing Team"
+  new_team: "New Team"
