@@ -162,6 +162,8 @@ level.each_index do |i|
   cat.save
 end
 
+
+
 # Seed Teams
 Team.create!(name: "Sparring")
 Team.create!(name: "Stránčice")

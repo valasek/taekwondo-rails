@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905215839) do
+ActiveRecord::Schema.define(version: 20160919210730) do
 
   create_table "competitions", force: :cascade do |t|
     t.string   "name"
@@ -29,8 +29,20 @@ ActiveRecord::Schema.define(version: 20160905215839) do
     t.integer  "competition_id"
     t.boolean  "trainee"
     t.boolean  "coach"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "matsogi_id"
+    t.integer  "tull_id"
+    t.integer  "wirok_id"
+    t.integer  "tki_id"
+    t.integer  "mobum_matsogi_id"
+    t.integer  "tull_team_id"
+    t.index ["matsogi_id"], name: "index_competitions_members_on_matsogi_id"
+    t.index ["mobum_matsogi_id"], name: "index_competitions_members_on_mobum_matsogi_id"
+    t.index ["tki_id"], name: "index_competitions_members_on_tki_id"
+    t.index ["tull_id"], name: "index_competitions_members_on_tull_id"
+    t.index ["tull_team_id"], name: "index_competitions_members_on_tull_team_id"
+    t.index ["wirok_id"], name: "index_competitions_members_on_wirok_id"
   end
 
   create_table "level_translations", force: :cascade do |t|
@@ -49,6 +61,24 @@ ActiveRecord::Schema.define(version: 20160905215839) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "matsogi_translations", force: :cascade do |t|
+    t.integer  "matsogi_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_matsogi_translations_on_locale"
+    t.index ["matsogi_id"], name: "index_matsogi_translations_on_matsogi_id"
+  end
+
+  create_table "matsogis", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sex_id"
+    t.index ["sex_id"], name: "index_matsogis_on_sex_id"
+  end
+
   create_table "members", force: :cascade do |t|
     t.integer  "itf_id"
     t.string   "first_name"
@@ -62,6 +92,24 @@ ActiveRecord::Schema.define(version: 20160905215839) do
     t.index ["level_id"], name: "index_members_on_level_id"
     t.index ["sex_id"], name: "index_members_on_sex_id"
     t.index ["team_id"], name: "index_members_on_team_id"
+  end
+
+  create_table "mobum_matsogi_translations", force: :cascade do |t|
+    t.integer  "mobum_matsogi_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_mobum_matsogi_translations_on_locale"
+    t.index ["mobum_matsogi_id"], name: "index_mobum_matsogi_translations_on_mobum_matsogi_id"
+  end
+
+  create_table "mobum_matsogis", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sex_id"
+    t.index ["sex_id"], name: "index_mobum_matsogis_on_sex_id"
   end
 
   create_table "sex_translations", force: :cascade do |t|
@@ -86,6 +134,60 @@ ActiveRecord::Schema.define(version: 20160905215839) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tki_translations", force: :cascade do |t|
+    t.integer  "tki_id",     null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_tki_translations_on_locale"
+    t.index ["tki_id"], name: "index_tki_translations_on_tki_id"
+  end
+
+  create_table "tkis", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sex_id"
+    t.index ["sex_id"], name: "index_tkis_on_sex_id"
+  end
+
+  create_table "tull_team_translations", force: :cascade do |t|
+    t.integer  "tull_team_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_tull_team_translations_on_locale"
+    t.index ["tull_team_id"], name: "index_tull_team_translations_on_tull_team_id"
+  end
+
+  create_table "tull_teams", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sex_id"
+    t.index ["sex_id"], name: "index_tull_teams_on_sex_id"
+  end
+
+  create_table "tull_translations", force: :cascade do |t|
+    t.integer  "tull_id",    null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_tull_translations_on_locale"
+    t.index ["tull_id"], name: "index_tull_translations_on_tull_id"
+  end
+
+  create_table "tulls", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sex_id"
+    t.index ["sex_id"], name: "index_tulls_on_sex_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -101,6 +203,24 @@ ActiveRecord::Schema.define(version: 20160905215839) do
     t.datetime "reset_sent_at"
     t.integer  "team_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "wirok_translations", force: :cascade do |t|
+    t.integer  "wirok_id",   null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_wirok_translations_on_locale"
+    t.index ["wirok_id"], name: "index_wirok_translations_on_wirok_id"
+  end
+
+  create_table "wiroks", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "sex_id"
+    t.index ["sex_id"], name: "index_wiroks_on_sex_id"
   end
 
 end

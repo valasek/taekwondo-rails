@@ -1,9 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-matsogi_one:
+one:
   id: 1
-  name: Male
+  name: MyString
+  sex_id: 1
 
-matsogi_two:
+two:
   id: 2
-  name: Female
+  name: MyString
+  sex_id: 2
+

@@ -35,6 +35,9 @@
     <% end %>
   </tbody>
 </table>
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
 <% if current_user.admin %>
     <br>
     <%= link_to t('new_competition'), new_competition_path, class: 'btn btn-primary' %>
