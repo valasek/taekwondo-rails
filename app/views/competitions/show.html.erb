@@ -35,5 +35,5 @@
   <%= @competition.langlong %>
 </p>
 
-<%= link_to t('edit'), edit_competition_path(@competition) %> |
-<%= link_to t('back'), competitions_path %>
+<%= link_to t('edit'), edit_competition_path(@competition), class: "btn btn-primary" %>
+<%= link_to t('back'), competitions_path, class: "btn btn-default" %>

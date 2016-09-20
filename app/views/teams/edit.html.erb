@@ -2,5 +2,6 @@
 
 <%= render 'form', team: @team %>
 
-<%= link_to t('show'), @team %> |
-<%= link_to t('back'), teams_path %>
+<br/>
+<%= link_to t('show'), @team, class: "btn btn-default" %>
+<%= link_to t('back'), teams_path, class: "btn btn-default" %>

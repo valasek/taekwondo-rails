@@ -20,5 +20,15 @@
   <%= @member.birthdate %>
 </p>
 
-<%= link_to t('edit'), edit_member_path(@member) %> |
-<%= link_to t('back'), members_path %>
+<p>
+  <strong><%= t('sex') %>:</strong>
+  <%= @member.sex.name %>
+</p>
+
+<p>
+  <strong><%= t('level') %>:</strong>
+  <%= @member.level.name %>
+</p>
+
+<%= link_to t('edit'), edit_member_path(@member), class: "btn btn-primary" %>
+<%= link_to t('back'), members_path, class: "btn btn-default" %>

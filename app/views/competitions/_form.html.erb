@@ -57,10 +57,9 @@
   </div>
 
   <div class="row form-group">
-
     <div class="col-sm-12">
       <%= f.label t('select_location') %>
-          <!-- <%= f.label t('langlong') %> -->
+      <!-- <%= f.label t('langlong') %> -->
       <!-- <%= f.text_field :langlong %> -->
       <div id="map-container">
         <div id="map-canvas"></div>
@@ -69,6 +68,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit( class: "btn btn-primary") %>
   </div>
 <% end %>

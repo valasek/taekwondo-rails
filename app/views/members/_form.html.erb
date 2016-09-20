@@ -11,27 +11,51 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :ITF_ID %>
-    <%= f.text_field :itf_id %>
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <%= f.label :ITF_ID %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field :itf_id %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label t('birthdate') %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.date_select :birthdate %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label t('first_name') %>
-    <%= f.text_field :first_name %>
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <%= f.label t('first_name') %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label t('sex') %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.collection_select :sex_id, Sex.all, :id, :name %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label t('last_name') %>
-    <%= f.text_field :last_name %>
+  <div class="row form-group">
+    <div class="col-sm-2">
+      <%= f.label t('last_name') %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label t('level') %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.collection_select :level_id, Level.all, :id, :name %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label t('birthdate') %>
-    <%= f.date_select :birthdate %>
-  </div>
+  <%= f.submit( class:"btn btn-primary" ) %>
 
-  <div class="btn btn-default">
-    <%= f.submit %>
-  </div>
 <% end %>

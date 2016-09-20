@@ -79,6 +79,9 @@ cs:
   wirok: "Test síly"
   mobum_matsogi: "Modelový sparring"
   tull_team: "Týmové sestavy"
+  member_created: 'Člen úspěšně vytvořen.'
+  member_updated: 'Člen úspěšně aktualizován.'
+  member_deleted: 'Člen úspěšně odstraněn.'
 # Users
   edit_user: "Upravit použivatele"
   update_your_profile: "Aktualizujte si profil"

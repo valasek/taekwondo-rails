@@ -3,5 +3,5 @@
 <%= render 'form', competition: @competition %>
 
 <br/>
-<%= link_to t('show'), @competition %> |
-<%= link_to t('back'), competitions_path %>
+<%= link_to t('show'), @competition, class: "btn btn-default" %>
+<%= link_to t('back'), competitions_path, class: "btn btn-default" %>
