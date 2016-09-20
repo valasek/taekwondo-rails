@@ -25,7 +25,7 @@
         <td><%= competition.fee %></td>
         <td><a href="<%= competition.instructions_url %>"><%= t('instructions') %></a></td>
         <td><%= competition.langlong %></td>
-        <td><%= link_to t('enroll'), controller: :members, action: :index, competition_id: competition.id %></td>
+        <td><%= link_to t('enroll_members'), controller: :members, action: :index, competition_id: competition.id %></td>
         <% if current_user.admin %>
           <td><%= link_to t('show'), competition %></td>
           <td><%= link_to t('edit'), edit_competition_path(competition) %></td>

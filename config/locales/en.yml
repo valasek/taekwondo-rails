@@ -75,6 +75,9 @@ en:
       - :year
   back: "Back"
   editing_competition: "Editing Competition"
+  successfully_created: "Competition was successfully created."
+  successfully_updated: 'Competition was successfully updated.'
+  successfully_deleted: 'Competition was successfully deleted.'
 # Teams
   no_of_members: "Number of members"
   new_team: "New Team"
@@ -90,6 +93,7 @@ en:
   edit_member: "Editing Member"
   enroll: "Enroll"
   enroll_to_comp: "Enroll to Competition"
+  select_location: "Select Location"
   tull: "Tul"
   matsogi: "Matsogi"
   tki: "T-ki"

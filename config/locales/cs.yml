@@ -35,13 +35,14 @@ cs:
   update_password: "Aktualizuj heslo"
 # Competitions
   location: "Místo"
-  date_text: "Datum"
-  deadline: "Termín přihlášky"
-  fee: "Poplatek"
+  date_text: "Datum konání"
+  deadline: "Uzávěrka přihlášek"
+  fee: "Poplatek za člena"
   instructions_url: "Instrukce"
   instructions: "Instrukce"
   langlong: "GPS"
   enroll_members: "Nahlásit členy"
+  select_location: "Označte místo konání"
   show: "Zobrazit"
   edit: "Upravit"
   destroy: "Vymazat"
@@ -54,6 +55,9 @@ cs:
       - :year
   back: "Zpět"
   editing_competition: "Úprava soutěže"
+  successfully_created: "Soutěž byla úspěšně vytvořena."
+  successfully_updated: 'Soutěž byla úspěšně aktualizována.'
+  successfully_deleted: 'Soutěž byla úspěšně odstraněna.'
 # Teams
   no_of_members: "Počet členů"
   new_team: "Nový tým"
