@@ -69,6 +69,12 @@ cs:
   edit_member: "Úprava člena"
   enroll: "Přihlášen"
   enroll_to_comp: "Přihlásit na soutěž"
+  tull: "Sestavy"
+  matsogi: "Sportovní zápas"
+  tki: "Speciální techniky"
+  wirok: "Test síly"
+  mobum_matsogi: "Modelový sparring"
+  tull_team: "Týmové sestavy"
 # Users
   edit_user: "Upravit použivatele"
   update_your_profile: "Aktualizujte si profil"

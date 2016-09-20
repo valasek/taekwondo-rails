@@ -90,6 +90,12 @@ en:
   edit_member: "Editing Member"
   enroll: "Enroll"
   enroll_to_comp: "Enroll to Competition"
+  tull: "Tul"
+  matsogi: "Matsogi"
+  tki: "T-ki"
+  wirok: "Wirok"
+  mobum_matsogi: "Mobum Matsogi"
+  tull_team: "Tull Team"
 # Users
   edit_user: "Edit User"
   update_your_profile: "Update your profile"

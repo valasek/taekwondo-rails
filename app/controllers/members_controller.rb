@@ -25,7 +25,7 @@ class MembersController < ApplicationController
         selected_member.competitions << selected_competition
       end
     end
-    #redirect to form setting member competition levels
+    redirect_to controller: 'members', action: 'index', competition_id: params[:competition_id], enrolled: true
   end
 
   # GET /members
@@ -36,8 +36,19 @@ class MembersController < ApplicationController
     else
       @members = Member.all.where( team_id: @current_user.team_id )
     end
+    @tull = Tull.all
+    @tull_team = TullTeam.all
+    @wirok = Wirok.all
+    @tki = Tki.all
+    @mobum_matsogi = MobumMatsogi.all
     if params[:competition_id]
       @competition_id = params[:competition_id]
+    end
+    if params[:competition_id]
+      @competition_id = params[:competition_id]
+    end
+    if params[:enrolled]
+      @enrolled = params[:enrolled]
     end
   end
 
