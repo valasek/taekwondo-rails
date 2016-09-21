@@ -83,6 +83,6 @@
     <% else %>
         <br>
         <%= link_to t('new_member'), new_member_path, class: 'btn btn-primary' %>
-        <%= link_to "Export", {controller: :members, action: :export}, class: 'btn btn-default' %>
+        <%= link_to '<i class="glyphicon glyphicon-save-file"></i> Export'.html_safe, {controller: :members, action: :export}, class: 'btn btn-default' %>
     <% end %>
 <% end %>
