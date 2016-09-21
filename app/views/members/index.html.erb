@@ -2,7 +2,7 @@
 
 <h1><%= t('members') %> <small>(<%= @members.count %>)</small></h1>
 
-<%= form_for :member, { :url => "add_to_competition", :method => 'put' } do |f| %>
+<%= form_for :member, { :path => add_to_competition_members_path, :method => 'put' } do |f| %>
     <table class="table">
       <thead>
       <tr>
@@ -83,5 +83,6 @@
     <% else %>
         <br>
         <%= link_to t('new_member'), new_member_path, class: 'btn btn-primary' %>
+        <%= link_to "Export", {controller: :members, action: :export}, class: 'btn btn-default' %>
     <% end %>
 <% end %>

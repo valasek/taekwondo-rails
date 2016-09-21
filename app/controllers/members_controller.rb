@@ -28,6 +28,26 @@ class MembersController < ApplicationController
     redirect_to controller: 'members', action: 'index', competition_id: params[:competition_id], enrolled: true
   end
 
+  # GET /export
+  # GET /export.json
+  def export
+    package = Axlsx::Package.new
+    workbook = package.workbook
+    if current_user.admin
+      members = Member.all
+    else
+      members = Member.all.where( team_id: @current_user.team_id )
+    end
+    workbook.add_worksheet(name: "Exported members") do |sheet|
+      sheet.add_row ["ITF ID", t('first_name'), t('last_name'), t('birthdate'), t('sex'), t('level'), t('team_name')]
+      members.each do |f|
+        sheet.add_row [f.itf_id, f.first_name, f.last_name, f.birthdate, f.sex.name, f.level.name, f.team.name]
+      end
+    end
+    package.serialize "#{Rails.root}/tmp/basic.xlsx"
+    send_file("#{Rails.root}/tmp/basic.xlsx", filename: "Members.xlsx", type: "application/vnd.ms-excel")
+  end
+
   # GET /members
   # GET /members.json
   def index
