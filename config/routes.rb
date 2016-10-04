@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :password_resets,     only: [:new, :create, :edit, :update]
     resources :teams
     resources :competitions
+    resources :competitions_members do
+      put 'update_competition_categories', on: :collection
+    end
     resources :members do
       get 'export', on: :collection
       put 'add_to_competition', on: :collection

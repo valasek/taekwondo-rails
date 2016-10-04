@@ -1,5 +1,7 @@
 class Tull < ApplicationRecord
-  translates :name
+  has_many :tull_translations
+  translates :name, :fallbacks_for_empty_translations => true
+  accepts_nested_attributes_for :tull_translations
   has_many :competitions_members
   has_many :sexes
 

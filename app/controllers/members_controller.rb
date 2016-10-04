@@ -1,12 +1,9 @@
+# encoding: utf-8
 class MembersController < ApplicationController
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
+  # PUT /add_to_competition
   def add_to_competition
-    logger.debug "************"
-    logger.debug "Selected members: #{params[:member_ids].count}"
-    logger.debug "Selected member IDs: #{params[:member_ids]}"
-    logger.debug "competition_id: #{params[:competition_id]}"
-    logger.debug "************"
     ActiveRecord::Base.transaction do
       assigned_members = Member.where( team_id: current_user.team_id)
       # lets delete old assignments of members to particular competition
@@ -25,7 +22,7 @@ class MembersController < ApplicationController
         selected_member.competitions << selected_competition
       end
     end
-    redirect_to controller: 'members', action: 'index', competition_id: params[:competition_id], enrolled: true
+    redirect_to controller: 'competitions_members', action: 'index' #, competition_id: params[:competition_id]
   end
 
   # GET /export
@@ -48,7 +45,7 @@ class MembersController < ApplicationController
     send_file("#{Rails.root}/tmp/basic.xlsx", filename: "Members.xlsx", type: "application/vnd.ms-excel")
   end
 
-  # GET /members
+  # GET /membersa
   # GET /members.json
   def index
     if current_user.admin
@@ -56,19 +53,8 @@ class MembersController < ApplicationController
     else
       @members = Member.all.where( team_id: @current_user.team_id )
     end
-    @tull = Tull.all
-    @tull_team = TullTeam.all
-    @wirok = Wirok.all
-    @tki = Tki.all
-    @mobum_matsogi = MobumMatsogi.all
     if params[:competition_id]
       @competition_id = params[:competition_id]
-    end
-    if params[:competition_id]
-      @competition_id = params[:competition_id]
-    end
-    if params[:enrolled]
-      @enrolled = params[:enrolled]
     end
   end
 

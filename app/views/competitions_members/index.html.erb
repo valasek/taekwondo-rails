@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Competitions Members</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th><%= "ITF ID" %></th>
+    <th><%= t('first_name') %></th>
+    <th><%= t('last_name') %></th>
+    <th>Competition name</th>
+    <th><%= t('tull') %></th>
+    <th><%= t('matsogi') %></th>
+    <th><%= t('tki') %></th>
+    <th><%= t('wirok') %></th>
+    <th><%= t('mobum_matsogi') %></th>
+    <th><%= t('tull_team') %></th>
+    <th><%= "Trainee" %></th>
+    <th><%= "Coach" %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @members.each do |ff| %>
+      <tr>
+        <td><%= Member.find( ff.member_id ).itf_id %></td>
+        <td><%= Member.find( ff.member_id ).first_name %></td>
+        <td><%= Member.find( ff.member_id ).last_name %></td>
+        <td><%= collection_select :competitions_members, :member_id, Member.all, :id, :first_name %></td>
+        <td><%= collection_select :competitions_members, :tull_id, Tull.all, :id, :name %></td>
+        <td><%= collection_select( :competitions_members, :matsogi_id, Matsogi.all.where(sex_id: Member.find( ff.member_id).sex_id), :id, :name) %></td>
+        <td><%= collection_select( :competitions_members, :tki_id, Tki.all.where(sex_id: Member.find( ff.member_id).sex_id), :id, :name) %></td>
+        <td><%= collection_select( :competitions_members, :wirok_id, Wirok.all.where(sex_id: Member.find( ff.member_id).sex_id), :id, :name) %></td>
+        <td><%= collection_select( :competitions_members, :mobum_matsogi_id, MobumMatsogi.all.where(sex_id: Member.find( ff.member_id).sex_id), :id, :name) %></td>
+        <td><%= collection_select( :competitions_members, :tull_team_id, TullTeam.all.where(sex_id: Member.find( ff.member_id).sex_id), :id, :name) %></td>
+        <% if ff.trainee %>
+            <td><%= check_box_tag "trainee[]", ff.trainee, {:checked => "checked"} %></td>
+        <% else %>
+            <td><%= check_box_tag "trainee[]", ff.trainee  %></td>
+        <% end %>
+        <% if ff.coach %>
+            <td><%= check_box_tag "coach[]", ff.coach, {:checked => "checked"} %></td>
+        <% else %>
+            <td><%= check_box_tag "coach[]", ff.coach %></td>
+        <% end %>
+        <td><%= link_to 'Show', ff %></td>
+        <td><%= link_to 'Edit', edit_competitions_member_path(ff) %></td>
+        <td><%= link_to 'Destroy', ff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+<%= submit_tag t('confirm_enrollment'), class: 'btn btn-primary' %>

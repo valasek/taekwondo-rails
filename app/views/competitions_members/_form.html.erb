@@ -1,0 +1,17 @@
+<%= form_for(competitions_member) do |f| %>
+  <% if competitions_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(competitions_member.errors.count, "error") %> prohibited this competitions_member from being saved:</h2>
+
+      <ul>
+      <% competitions_member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
